@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+		<title>Maestro</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+		<link rel="stylesheet" href="css/maestro.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/maestro.js"></script>
+	</head>
+	<body>
+		<div class="leftBar">
+			<img id="profilePic">
+			<img class="theTecno" src="images/itc.png">
+			<h1>Nombre</h1>
+			<h2 id="nombre"></h2>
+			<h1>Departamento</h1>
+			<h2 id="departamento"></h2>
+			<div class="logout">
+				<a href="/">
+					<img src="images/salir.jpg">
+				</a>
+				<a href="/">
+					<button>Cerrar sesión</button>
+				</a>
+			</div>
+		</div>
+		<content>
+			<h1 class="title">Grupos</h1>
+
+			<div id="groups"></div>
+		</content>
+		<div class="modal">
+			<div class="modalContent">
+				<h3>Selecciona a que parcial se hará la retroalimentación</h3>
+				<select id="select">
+					<option>Parcial 1</option>
+					<option>Parcial 2</option>
+					<option>Parcial 3</option>
+					<option>Parcial 4</option>
+				</select>
+				<h3>Ingresar observación</h3>
+				<textarea id="textarea"></textarea>
+				<button onclick="addFeedback()">Agregar</button>
+				<button onclick="closeModal()">Cerrar</button>
+			</div>
+		</div>
+		<!-- built files will be auto injected -->
+	</body>
+</html>

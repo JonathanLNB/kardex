@@ -1,13 +1,7 @@
 var express = require('express');
-var path = require('path');
-var router = express.Router();
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var pg = require('pg');
 var app = express();
-var bodyParser = require('body-parser');
-//Ejemplo: var direccion = "postgres://usuario:contraseña@localhost:5432/basededatos";
-var cliente, query;
 
 /*
   ___                            _                ____ _                     
@@ -19,9 +13,11 @@ var cliente, query;
   Ejemplo:
   const {notFound, errorHandler} = require('./routes/Middleware');
 */
-var app = express();
 
 const {notFound, errorHandler} = require('./routes/Middleware');
+const {getGrupos} = require('./routes/Grupo');
+const {agregaRetroalimentacion, getMensajes} = require('./routes/Observacion');
+const {infoAlumno} = require('./routes/Alumno');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -38,7 +34,21 @@ Ejemplo
  router.post('/', funcion);
  router.get('/', funcion);
 */
+app.post("/api/observacion", function (req, res, next){
+    agregaRetroalimentacion(req, res, next)
+});
 
+app.get("/api/grupos/:id", function (req, res, next){
+    getGrupos(req, res, next)
+});
+
+app.get("/api/observaciones/:nocontrol", function (req, res, next){
+    getMensajes(req, res, next)
+});
+
+app.get("/api/alumno/:nocontrol", function (req, res, next){
+    infoAlumno(req, res, next)
+});
 app.use(notFound);
 app.use(errorHandler);
 

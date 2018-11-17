@@ -1,0 +1,25 @@
+body { padding-left: 400px; margin: 0; display: block; }
+content { padding: 60px; background: url("../images/auditorio.jpg"); background-repeat: all; min-height: 100vh; display: block; box-sizing: border-box; }
+.grade { line-height: 30px; margin: 10px 0; border: 1px solid black; box-sizing: border-box; padding: 0 5px; }
+.grade.feedbacked { background-color: lightblue; }
+.group { height: 50px; overflow: hidden; }
+.group.expanded { height: initial; }
+.group.expanded .groupName { background-color: lightblue; }
+.groupName { background-color: white; border-bottom: 1px solid black; margin: 0; padding: 0 5px; height: 50px; line-height: 50px; }
+#groups { margin-top: 60px; background-color: white; border: 1px solid black }
+.leftBar { position: fixed; left: 0; top: 0; width: 400px; height: 100%; background-color: lightgreen; }
+.leftBar a { display: block; }
+.leftBar a * { margin: 0 auto; display: flex; }
+.leftBar button { margin-top: 20px; cursor: pointer; text-decoration: none; }
+.leftBar h1, .leftBar h2 { padding-left: 5px; }
+.logout { position: absolute; left: 0; width: 100%; bottom: 20px; }
+.logout img { width: 80px; }
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); }
+.modal.visible { display: block; }
+.modalContent { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; }
+.modalContent textarea { border: 1px solid black; }
+#profilePic { display: block; margin: 20px auto; height: 150px; width: 150px; }
+.student { padding: 0 5px; flex-flow: row; flex-wrap: wrap; justify-content: space-between; display: flex; height: 50px; line-height: 50px; }
+.student .fa-paper-plane:before { line-height: 50px; }
+.theTecno { position: absolute; top: 125px; right: 100px; width: 50px; }
+.title { margin: 0 120px; background-color: blue; color: white; text-align: center; height: 120px; line-height: 120px; }

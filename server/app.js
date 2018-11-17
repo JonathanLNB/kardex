@@ -34,6 +34,24 @@ Ejemplo
  router.post('/', funcion);
  router.get('/', funcion);
 */
+app.get('/maestro', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\maestro.html");
+});
+app.get('/css/maestro.css', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\css\\maestro.css");
+});
+app.get('/js/maestro.js', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\js\\maestro.js");
+});
+app.get('/images/itc.png', function(req, res){
+  res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\images\\itc.png");
+});
+app.get('/images/auditorio.jpg', function(req, res){
+  res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\images\\auditorio.jpg");
+});
+app.get('/images/salir.jpg', function(req, res){
+  res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\images\\salir.jpg");
+});
 app.post("/api/observacion", function (req, res, next){
     agregaRetroalimentacion(req, res, next)
 });

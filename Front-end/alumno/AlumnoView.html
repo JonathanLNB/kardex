@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alumno</title>
+    <link rel="stylesheet" href="AlumnoCss.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="AlumnoController.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row profile">
+        <div class="col-md-3" style="border: solid aqua 1px;" >
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <img src="../img/alan.jpg"alt="Imagen de usuario" class="img-responsive">
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        <label id="TutorName">Alan Alvarez Vasquez</label>
+                    </div>
+                    <div class="profile-usertitle-job">
+                        <label id="Userjob">Alumno de ingenieria en sistemas</label>
+                    </div>
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Cerrar sesion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content">
+                <div class="card group-card" style="width: 18rem;background-color:#33A2FF">
+                    <div class="card-body">
+                        <h5 class="card-title " style="text-align: center;color: white"> Mensajes</h5>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>Mensaje:<span id="Remitente">Julio Asato</span></strong>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>Este es un mensaje de prueba de como se veria un mensaje de un tutor acerca  de alguna calificacion en particular</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- colapsable dos-->
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>Mensaje:<span id="Remitente2">Elda</span></strong>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>Este es un mensaje de prueba de como se veria un mensaje de un profesor acerca  de alguna calificacion en particular de un parcial en particular</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- colapsable tres-->
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>Mensaje:<span id="Remitente3">Guillermo Fierro</span></strong>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>Este es un mensaje de prueba de como se veria un mensaje de un profesor acerca  de alguna calificacion en particular de un parcial en particular</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

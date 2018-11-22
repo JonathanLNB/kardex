@@ -1,4 +1,4 @@
-var selectedStudentIdx, selectedGroupIdx, theGroups;
+var selectedStudentIdx, selectedGroupIdx, selectedGradeIdx, theGroups;
 function addFeedback(){
 	var group = theGroups.grupos[selectedGroupIdx], student = group.alumnos[0];
 	var params = {};
@@ -27,6 +27,7 @@ $(document).ready(function(){
 		url: "/api/grupos/"+id,
 		success: function(data){
 			theGroups = data;
+			console.log(data);
 			$("#profilePic").attr("src", theGroups.maestro.foto);
 			$("#nombre").html(theGroups.maestro.nombre);
 			$("#departamento").html(theGroups.maestro.departamento);
@@ -41,7 +42,7 @@ $(document).ready(function(){
 					groupsHTML += '<div>';
 					for(var gradeIdx = 0; gradeIdx < student.parciales.length; gradeIdx++){
 						var grade = student.parciales[gradeIdx];
-						groupsHTML += '<div class="grade '+(grade.retroalimentacion ? 'feedbacked' : '')+'">Parcial '+(gradeIdx+1)+'</div>';
+						groupsHTML += '<div class="grade '+(grade.retroalimentacion ? 'feedbacked' : '')+'" student-idx="'+studentIdx+'" group-idx="'+groupIdx+'" grade-idx="'+gradeIdx+'">Parcial '+(gradeIdx+1)+'</div>';
 					}
 					groupsHTML += '</div>';
 					groupsHTML += '<i class="fa fa-paper-plane" student-idx="'+studentIdx+'" group-idx="'+groupIdx+'"></i>';
@@ -59,6 +60,14 @@ $(document).ready(function(){
 				selectedStudentIdx = element.attr("student-idx");
 				selectedGroupIdx = element.attr("group-idx");
 				$(".modal").addClass("visible");
+			});
+			$(".feedbacked").click(function(e){
+				var element = $(e.currentTarget);
+				selectedStudentIdx = element.attr("student-idx");
+				selectedGroupIdx = element.attr("group-idx");
+				selectedGradeIdx = element.attr("group-idx");
+				$(".message p").html(theGroups.grupos[selectedGroupIdx].alumnos[selectedStudentIdx].parciales[selectedGradeIdx].retroalimentacion);
+				$(".message").addClass("visible");
 			});
 		}
 	});

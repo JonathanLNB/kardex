@@ -7,13 +7,11 @@ cliente = new pg.Client(direccion);
 cliente.connect();
 
 function agregaRetroalimentacion(req, res, next) {
-    query = "insert into mensajes(idgrupo, nocontrol, parcial, mensaje) values(" + req.body.idgrupo + ", " + req.body.nocontrol + ", " + req.body.parcial + ", '" + req.body.mensaje + "')";
+    query = "update calificacion set observacion = '" + req.body.mensaje +"' where idgrupo = '" + req.body.idgrupo + "' and nocontrol = '" + req.body.nocontrol + "' and parcial = '" + req.body.parcial + "'";
+    res.setHeader('Content-Type', 'application/json');
     cliente.query(query).then(req => {
-        const rows = req.rows;
-        rows.map(row => {
-            res.send("{\"valid\":1}");
-            res.end();
-        });
+        res.send("{\"valid\":1}");
+        res.end();
     }).catch(error => {
         console.log(error);
         res.send("{\"valid\":0}");

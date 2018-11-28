@@ -8,42 +8,94 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="TutorController.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row profile">
-            <div class="col-md-3" style="border: solid aqua 1px;" >
-                <div class="profile-sidebar">
-                    <div class="profile-userpic">
-                        <img src="../img/alan.jpg"alt="Imagen de usuario" class="img-responsive">
+<div class="container-fluid">
+    <div class="row profile">
+        <div class="col-md-3" style="border: solid aqua 1px;" >
+            <div class="profile-sidebar">
+                <div class="profile-userpic">
+                    <img src="../img/alan.jpg"alt="Imagen de usuario" class="img-responsive">
+                </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        <label id="TutorName">Alan Alvarez Vasquez</label>
                     </div>
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">
-                            <label id="TutorName">Alan Alvarez Vasquez</label>
-                        </div>
-                        <div class="profile-usertitle-job">
-                            <label id="Userjob">Maestro de ingenieria en sistemas</label>
-                        </div>
-                        <div class="profile-userbuttons">
-                            <button type="button" class="btn btn-success btn-sm">Cerrar sesion</button>
-                        </div>
+                    <div class="profile-usertitle-job">
+                        <label id="Userjob">Alumno de ingenieria en sistemas</label>
+                    </div>
+                    <div class="profile-userbuttons">
+                        <button type="button" class="btn btn-success btn-sm">Cerrar sesion</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
-                <div class="profile-content">
-                    <div class="card group-card" style="width: 18rem;background-color:#33A2FF">
-                        <div class="card-body">
-                            <h5 class="card-title " style="text-align: center;color: white"> Grupos</h5>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content">
+                <div class="card group-card" style="width: 18rem;background-color:#33A2FF">
+                    <div class="card-body">
+                        <h5 class="card-title " style="text-align: center;color: white"> Alumnos</h5>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong><span id="Remitente">Jesus Jilote</span></strong>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <textarea id="mensaje1"></textarea>
+                                <button type="button" class="btn btn-primary"onclick="enviar1()">Enviar mensaje</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="accordion" id="accordionExample">
+                    <!-- colapsable dos-->
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong><span id="Remitente2">Edgar Emanuel Martinez Santibañes</span></strong>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <textarea id="mensaje2"></textarea>
+                                <button type="button" class="btn btn-primary"onclick="enviar2()">Enviar mensaje</button>
+                            </div>
+                        </div>
                     </div>
-                    <span><button onclick="GroupCards()">ver tarjetas</button></span>
+                    <!-- colapsable tres-->
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong><span id="Remitente3">Hector Angel de Jesus</span></strong>
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <form>
+                                    <input value="3" type="hidden" id="a3">
+                                    <textarea id="mensaje3"></textarea>
+                                    <button type="button" class="btn btn-primary"onclick="enviar3()">Enviar mensaje</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<script src="TutorController.js"></script>
 </body>
 </html>

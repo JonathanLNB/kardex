@@ -34,6 +34,9 @@ Ejemplo
  router.post('/', funcion);
  router.get('/', funcion);
 */
+app.get('/', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\index.html");
+});
 app.get('/maestro', function(req, res){
 	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\maestro.html");
 });

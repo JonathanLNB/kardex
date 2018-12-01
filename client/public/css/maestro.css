@@ -1,4 +1,4 @@
-content { padding: 60px; background: url("../images/auditorio.jpg"); background-repeat: all; min-height: 100vh; display: block; box-sizing: border-box; }
+content { padding: 60px; background: url("../images/auditorio.jpg"); background-repeat: all; min-height: calc(100vh - 40px); display: block; box-sizing: border-box; }
 .grade { line-height: 30px; margin: 10px 0; border: 1px solid black; box-sizing: border-box; padding: 0 5px; }
 .grade.feedbacked { background-color: lightblue; }
 .group { height: 50px; overflow: hidden; }
@@ -33,9 +33,6 @@ content { padding: 60px; background: url("../images/auditorio.jpg"); background-
 .theTecno { position: absolute; top: 125px; right: 100px; width: 50px; }
 .title { margin: 0 120px; background-color: blue; color: white; text-align: center; height: 120px; line-height: 120px; }
 
-.profile {
-    margin: 20px 0;
-}
 
 /* Profile sidebar */
 .profile-sidebar {

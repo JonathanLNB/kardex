@@ -34,6 +34,9 @@ Ejemplo
  router.post('/', funcion);
  router.get('/', funcion);
 */
+app.get('/', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\index.html");
+});
 app.get('/maestro', function(req, res){
 	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\maestro.html");
 });
@@ -42,6 +45,24 @@ app.get('/css/maestro.css', function(req, res){
 });
 app.get('/js/maestro.js', function(req, res){
 	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\js\\maestro.js");
+});
+app.get('/alumno', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\Front-end\\alumno\\AlumnoView.html");
+});
+app.get('/css/alumno.css', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\Front-end\\alumno\\AlumnoCss.css");
+});
+app.get('/js/alumno.js', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\Front-end\\alumno\\AlumnoController.js");
+});
+app.get('/tutor', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\Front-end\\tutor\\TutorView.html");
+});
+app.get('/css/tutor.css', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\Front-end\\tutor\\TutorCss.css");
+});
+app.get('/js/tutor.js', function(req, res){
+	res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\Front-end\\tutor\\TutorController.js");
 });
 app.get('/images/itc.png', function(req, res){
   res.sendFile("C:\\Users\\eemsh\\Documents\\ITC\\7\\Gestión de proyectos\\kardex\\client\\public\\images\\itc.png");
